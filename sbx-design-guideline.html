@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liu, Chi Chang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Chi-Chang Liu, Front-end Developmer/Designer, UI/UX Designer" />
+    <meta name="keywords" content="front-end, web, designer, developer, UI/UX" />
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body>
+    <h1 id="syncobox">SyncoBox網頁設計規範</h1>
+    <h6>tags: <code>web-design</code></h6>
+    <h2>目錄</h2>
+    <ul>
+    <li><strong><a href="#1">1. 通用基礎</a></strong>
+    <ul>
+    <li><strong><a href="#1-1">1-1 色彩 Colors</a></strong></li>
+    <li><strong><a href="#1-2">1-2 字體與排版 Typography</a></strong></li>
+    </ul>
+    </li>
+    <li><strong><a href="#2">2. 元件設計</a></strong>
+    <ul>
+    <li><strong><a href="#2-1">2-1 按鈕 Buttons</a></strong></li>
+    <li><strong><a href="#2-2">2-2 資料表格 Data tables</a></strong></li>
+    <li><strong><a href="#2-3">2-3 訊息視窗 Dialogs</a></strong></li>
+    <li><strong><a href="#2-4">2-4 標籤 Chips</a></strong></li>
+    <li><strong><a href="#2-5">2-5 載入進度條 Loader</a></strong></li>
+    <li><strong><a href="#2-6">2-6 菜單 Menus</a></strong></li>
+    </ul>
+    </li>
+    <li><strong><a href="#3">3. 頁面設計</a></strong>
+    <ul>
+    <li><strong><a href="#3-1">3-1 App頁面設定</a></strong></li>
+    <li><strong><a href="#3-2">3-2 資產管理頁面</a></strong></li>
+    </ul>
+    </li>
+    </ul>
+    <hr>
+    <h2 id="1">1. 通用基礎</h2>
+    <ol>
+    <li>為了使SyncoBox符合直覺易用、一致性與標準化等使用者體驗原則，此文件將針對SyncoBox Web的色彩、Typography及各種元件進行統一規範。</li>
+    <li>請先利用npm下載SyncoBox的CSS檔案</li>
+    </ol>
+    <pre><code>npm install syncobox-style@version
+    </code></pre>
+    <pre><code>//main.js
+
+    import 'syncobox-style/dist/sb-styles.css'
+    </code></pre>
+    <h3 id="1-1">1-1 色彩</h3>
+    <h4>(1)命名</h4>
+    <ul>
+    <li>所有色彩名稱繼承Vuetify的規範，並以16進位的Hex系統作為CSS的色彩格式。</li>
+    </ul>
+    <h4>(2)使用</h4>
+    <ul>
+    <li>每一個頁面(Page)與其中的元件(Component)，將依照其顯示資訊、互動性與任務屬性，指定對應的顏色名稱。詳細規範請往下參照對各元件的設計要求。</li>
+    </ul>
+    <h4>(3)預設值</h4>
+    <p><span style="color:#006ad8; font-weight:900; font-family: Roboto;">primary</span>
+    <span style="color:#0288D1; font-weight:900; font-family: Roboto;">light-bule darken-2</span>
+    <span style="color:#0399c5; font-weight:900; font-family: Roboto;">primary-gf</span>
+    <span style="color:#424242; font-weight:900; font-family: Roboto;">secondary</span>
+    <span style="color:#82B1FF; font-weight:900; font-family: Roboto;">accent</span>
+    <span style="color:#FF5252; font-weight:900; font-family: Roboto;">error</span>
+    <span style="color:#2196F3; font-weight:900; font-family: Roboto;">info</span>
+    <span style="color:#4CAF50; font-weight:900; font-family: Roboto;">success</span>
+    <span style="color:#FFC107; font-weight:900; font-family: Roboto;">warning</span></p>
+    <p><span style="background-color:#006ad8; color:#ffffff; font-weight:900; font-family: Roboto;">primary</span>
+    <span style="background-color:#0288D1; color:#ffffff; font-weight:900; font-family: Roboto;">light-bule darken-2</span>
+    <span style="background-color:#0399c5; color:#ffffff; font-weight:900; font-family: Roboto;">primary-gf</span>
+    <span style="background-color:#424242; color:#ffffff; font-weight:900; font-family: Roboto;">secondary</span>
+    <span style="background-color:#82B1FF; color:#ffffff; font-weight:900; font-family: Roboto;">accent</span>
+    <span style="background-color:#FF5252; color:#ffffff; font-weight:900; font-family: Roboto;">error</span>
+    <span style="background-color:#2196F3; color:#ffffff; font-weight:900; font-family: Roboto;">info</span>
+    <span style="background-color:#4CAF50; color:#ffffff; font-weight:900; font-family: Roboto;">success</span>
+    <span style="background-color:#FFC107; color:#ffffff; font-weight:900; font-family: Roboto;">warning</span></p>
+    <pre><code class="language-javascript">{
+        primary: &quot;#006ad8&quot;,
+        primary-gf: &quot;#0399c5&quot;,
+        light-bule darken-2: &quot;#0288D1&quot;,
+        secondary: &quot;#424242&quot;,
+        accent: &quot;#82B1FF&quot;,
+        error: &quot;#FF5252&quot;,
+        info: &quot;#2196F3&quot;,
+        success: &quot;#4CAF50&quot;,
+        warning: &quot;#FFC107&quot;,
+    }
+    </code></pre>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="1-2">1-2 字體與排版</h3>
+    <pre><code>html{
+      font-size:16px;
+      font-family:  'Microsoft Jhenghei', 'Roboto';
+    }
+    </code></pre>
+    <h4>(1)尺寸資訊與字體重量</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>Class</th>
+    <th>Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>.display-4</td>
+    <td><span style="font-weight:300; font-family: 'Microsoft Jhenghei', Roboto; font-size:6rem">Light 96sp/6rem</span></td>
+    </tr>
+    <tr>
+    <td>.display-3</td>
+    <td><span style="font-weight:300; font-family: 'Microsoft Jhenghei', Roboto; font-size:3.75rem">Light 60sp/3.75rem</span></td>
+    </tr>
+    <tr>
+    <td>.display-2</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:3rem">Regular 48sp/3rem</span></td>
+    </tr>
+    <tr>
+    <td>.display-1</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:2.125rem">Regular 34sp/2.125rem</span></td>
+    </tr>
+    <tr>
+    <td>.headline</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:1.5rem">Regular 24sp/1.5rem</span></td>
+    </tr>
+    <tr>
+    <td>.title</td>
+    <td><span style="font-weight:500; font-family: 'Microsoft Jhenghei', Roboto; font-size:1.25rem">Medium 20sp/1.25rem</span></td>
+    </tr>
+    <tr>
+    <td>.subtitle-1</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:1rem">Regular 16sp/1rem</span></td>
+    </tr>
+    <tr>
+    <td>.subtitle-2</td>
+    <td><span style="font-weight:500; font-family: 'Microsoft Jhenghei', Roboto; font-size:0.875rem">Medium 14sp/.875rem</span></td>
+    </tr>
+    <tr>
+    <td>.body-1</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:1rem">Regular 16sp/1rem</span></td>
+    </tr>
+    <tr>
+    <td>.body-2</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:0.875rem">Regular 14sp/.875rem</span></td>
+    </tr>
+    <tr>
+    <td>.caption</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:0.75rem">Light 12sp/.75rem</span></td>
+    </tr>
+    <tr>
+    <td>.overline</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:0.625rem; letter-spacing:0.166667em; text-transform: uppercase;">Light 10sp/.625rem letter-spacing:0.1667em</span></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(2)字體重量資訊</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>font-weight</th>
+    <th>Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Light</td>
+    <td><span style="font-weight:300; font-family: 'Microsoft Jhenghei', Roboto; font-size:1rem">font-weight:300</span></td>
+    </tr>
+    <tr>
+    <td>Regular</td>
+    <td><span style="font-weight:400; font-family: 'Microsoft Jhenghei', Roboto; font-size:1rem">font-weight:400</span></td>
+    </tr>
+    <tr>
+    <td>Medium</td>
+    <td><span style="font-weight:500; font-family: 'Microsoft Jhenghei', Roboto; font-size:1rem">font-weight:500</span></td>
+    </tr>
+    <tr>
+    <td>Bold</td>
+    <td><span style="font-weight:700; font-family: 'Microsoft Jhenghei', Roboto; font-size:1rem">font-weight:700</span></td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h2 id="2">2. 元件設計</h2>
+    <h3 id="2-1">2-1 按鈕 Buttons</h3>
+    <h4>(1)按鈕類型</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>名稱</th>
+    <th>優先等級</th>
+    <th>Description</th>
+    <th>Preview</th>
+    <th>Spec</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>default</td>
+    <td>最高</td>
+    <td>當前關鍵動作選用</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/contained_button.png" alt="Contained Button"></td>
+    <td><ul><li>Icon與文字距離4px</li></td>
+    </tr>
+    <tr>
+    <td>default (depressed)</td>
+    <td>高</td>
+    <td>表單欄位內的關鍵動作選用</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/depressed_button.png" alt="Contained button without shadow"></td>
+    <td><ul><li>Icon與文字距離4px</li></td>
+    </tr>
+    <tr>
+    <td>otulined</td>
+    <td>中</td>
+    <td>次要動作選用</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/outlined_button.png" alt="Outlined Button"></td>
+    <td><ul><li>Icon與文字距離4px</li></td>
+    </tr>
+    <tr>
+    <td>text</td>
+    <td>低</td>
+    <td>最低優先層級選用</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/text_button.png" alt="Outlined Button"></td>
+    <td><ul><li>Icon與文字距離4px</li></td>
+    </tr>
+    <tr>
+    <td>icon</td>
+    <td>低</td>
+    <td><ul><li>最低優先層級或小尺寸螢幕時選用</li><li>務必將動作名稱以tooltip呈現</li></ul></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/icon_button1.png" alt="Icon Button"> <img src="./img/portfolio/syncobox-design-guideline/img/icon_button.png" alt="Icon Button"></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>icon(fab)</td>
+    <td>低</td>
+    <td><ul><li>按鈕內容與區塊背景或資訊模糊時選用</li><li>務必將動作名稱以tooltip呈現</li></ul></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/icon_fab_button.png" alt="Icon Button"> <img src="./img/portfolio/syncobox-design-guideline/img/icon_fab_button_tooltip.png" alt="Icon Button"></td>
+    <td></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(2)使用原則</h4>
+    <ul>
+    <li>SyncoBox的所有按鈕，統一以Vuetify的「v-btn」為主，勿使用Kendo Button。</li>
+    <li>在版面充足的前提下，「最高優先等級按鈕」盡可能使用包含Icon的Contained Button，以利在小尺寸螢幕的RWD中，能夠轉換為Icon Button，而不至於導致使用者對個別按鈕功能的混淆。</li>
+    <li>若有相鄰的按鈕，請將「代表主要動作」的按鈕置於最右側(表格欄位內的按鈕不受此限)。</li>
+    <li>若有一個以上相同類型動作的按鈕相鄰，請將同類型動作的按鈕放入選單(menu)中，並依單一按鈕呼叫此選單，範例：</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th><span style="color:#4CAF50; font-weight:900; font-family: Roboto;">Do</span></th>
+    <th><span style="color:#FF5252; font-weight:900; font-family: Roboto;">Don't</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_button.png" alt="Menu Button"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_button_bad.png" alt="Not good Menu Button"></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(3)RWD設計</h4>
+    <ul>
+    <li>螢幕縮放的過程中，若按鈕從default button轉換為icon button，請確保Icon與按鈕邊界的左右間距相等。</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>縮小前</th>
+    <th>縮小後</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/rwd_button_before.png" alt="RWD default button"></td>
+    <td><table>  <thead>  <tr>  <th></th>  <th><span style="color:#4CAF50; font-weight:900; font-family: Roboto;">Do</span></th>  <th><span style="color:#FF5252; font-weight:900; font-family: Roboto;">Don't</span></th>  </tr>  </thead>  <tbody>  <tr>  <td></td>  <td><code><img src="./img/portfolio/syncobox-design-guideline/img/rwd_button_after_right.png" alt="right"></code></td>  <td><img src="./img/portfolio/syncobox-design-guideline/img/rwd_button_after_wrong.png" alt="wrong"></td> </tbody>  </table></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(4)各類型功能按鈕設計建議</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>Type</th>
+    <th>Color</th>
+    <th>Icon</th>
+    <th>Icon Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>確定</td>
+    <td>primary</td>
+    <td>-</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>取消</td>
+    <td></td>
+    <td>-</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>新增/加入</td>
+    <td>primary or grey darken-1</td>
+    <td>mdi-plus-circle or mdi-plus-circle-outline</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/baseline_add_circle_black_18dp.png" alt=""> <img src="./img/portfolio/syncobox-design-guideline/img/baseline_add_circle_outline_black_18dp.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>儲存</td>
+    <td>primary or grey darken-1</td>
+    <td>mdi-content-save</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/baseline_save_black_18dp.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>編輯/變更/更新/設計</td>
+    <td>primary or grey darken-1</td>
+    <td>mdi-pencil</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/baseline_edit_black_18dp.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>刪除/移除</td>
+    <td>error or grey darken-1</td>
+    <td>mdi-delete</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/baseline_delete_black_18dp.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>設定</td>
+    <td>grey darken-1</td>
+    <td>mdi-cog</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/cog_icon_136748.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>預覽</td>
+    <td>grey darken-1</td>
+    <td>mdi-eye</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/-remove-red-eye_90161.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>發布</td>
+    <td>primary</td>
+    <td>mdi-publish</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/-publish_90561.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>替換/更換/取代</td>
+    <td>-</td>
+    <td>mdi-twitter-retweet</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/twitter-retweet.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>開啟(視窗、Dialog)、瀏覽詳細資訊</td>
+    <td>-</td>
+    <td>mdi-open-in-new</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/icons8-external-link-48.png" alt=""></td>
+    </tr>
+    <tr>
+    <td>上傳</td>
+    <td>-</td>
+    <td>mdi-cloud-upload</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/cloud-upload.png" alt=""></td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="2-2">2-2 資料表格 Data Tables</h3>
+    <h4>(1)Table Title</h4>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/table_CardTitle3.png" alt="Table Title"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Title Icon</td>
+    <td>.pr-3 or .mr-3</td>
+    <td></td>
+    <td>default</td>
+    <td>與Title Text距離12px</td>
+    </tr>
+    <tr>
+    <td>Title Text</td>
+    <td>.v-card__title, .pl-3 or .ml-3</td>
+    <td></td>
+    <td>default</td>
+    <td>與Title Icon距離12px</td>
+    </tr>
+    <tr>
+    <td>Search Field</td>
+    <td>.table-search, .ma-0 or.pa-0</td>
+    <td></td>
+    <td>default</td>
+    <td>請將搜尋欄元件置此區域的右側、CTA按鈕的左側</td>
+    </tr>
+    <tr>
+    <td>CTA Button</td>
+    <td>.px-3 or .mx-3</td>
+    <td>default</td>
+    <td>primary</td>
+    <td><ul><li>請將最優先等級CTA按鈕置於最右側</li><li>與其他CTA Button距離12px</li></ul></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(2)Table Head</h4>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/thDesign.png" alt="Table Title"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Cell</td>
+    <td>.py-3 .px-4</td>
+    <td></td>
+    <td></td>
+    <td><li>每一列皆為「單行」</li><li>長於欄寬的文本以省略號省略之</li><li>border-width: 0px 1px 1px 1px;</li></td>
+    </tr>
+    <tr>
+    <td>Text</td>
+    <td>.subtitle-2</td>
+    <td></td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(3)Table Body</h4>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/tdDesign1.png" alt="Table Body"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Cell</td>
+    <td>.py-3 .px-4</td>
+    <td></td>
+    <td></td>
+    <td><li>每一列皆為「單行」</li><li>長於欄寬的文本以省略號省略之</li><li>(擬)以滑鼠點擊cell，展開全文</li><li>border-width: 0px 1px 1px 1px;</li></td>
+    </tr>
+    <tr>
+    <td>Text</td>
+    <td>.body-2</td>
+    <td></td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>CTA Button</td>
+    <td>.mx-2</td>
+    <td>default, small</td>
+    <td>primary</td>
+    <td>每一列最多一個最高優先等級按鈕，並置於第一欄</td>
+    </tr>
+    <tr>
+    <td>Text Button</td>
+    <td>.mx-2</td>
+    <td>text, small</td>
+    <td>custom</td>
+    <td><ul><li>每個button之間的margin間距為12px</li></ul></td>
+    </tr>
+    <tr>
+    <td>Icon Button</td>
+    <td>.mx-2</td>
+    <td>icon small</td>
+    <td>custom</td>
+    <td><ul><li>每個button之間的margin間距為12px</li><li>hover: tooltip顯示動作名稱</li></ul></td>
+    </tr>
+    <tr>
+    <td>Chips</td>
+    <td>.mx-2</td>
+    <td>small</td>
+    <td>custom</td>
+    <td><ul><li>請視資訊類型與優先程度，選擇是否使用outlined</li><li>勿使用label屬性，以免與Text Button混淆</li></ul></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(4)Pagination</h4>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/pagination.png" alt="Table Pagination"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Pagination</td>
+    <td></td>
+    <td></td>
+    <td>primary</td>
+    <td></td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="2-3">2-3 Dialogs</h3>
+    <h4>(1)使用時機</h4>
+    <ul>
+    <li>發生阻止應用程式正常運行的錯誤時，給予使用者提醒。</li>
+    <li>為使用者進行任務、決策或無法回覆的動作時，給予關鍵訊息，加以確認、提醒或警告。</li>
+    </ul>
+    <h4>(2)類型</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>項次</th>
+    <th>種類</th>
+    <th>定義/使用</th>
+    <th>尺寸建議</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Alert Dialog</td>
+    <td>提供訊息供使用者確認時使用</td>
+    <td><li>寬度：280px</li><li>高度：依內容而定</li></td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Confirmation Dialog</td>
+    <td>使用者須在Dialog中進行「除確認訊息外的」其他動作時使用</td>
+    <td><li>寬度：依內容而定</li><li>高度：依內容而定</li></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>Alert Dialog</h4>
+    <ul>
+    <li>提供訊息供使用者確認時使用</li>
+    </ul>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/alert_dialog.png" alt="alert_dialog"> <img src="./img/portfolio/syncobox-design-guideline/img/alert_dialog_description.png" alt="alert_dialog_description"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Card</td>
+    <td>default</td>
+    <td>max-width:280px</td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card Title</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card Body</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card Action</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td>不應包含超過兩個以上的動作，若有必要的第三個動作，請以不同於「主要動作」的形式，置於其他適合的地方</td>
+    </tr>
+    <tr>
+    <td>Cancel Button</td>
+    <td>text</td>
+    <td>default</td>
+    <td>default</td>
+    <td><li>請將取消按鈕置於v-card-actions的右側</li><li>與相鄰的「確認」按鈕距離8px</li></td>
+    </tr>
+    <tr>
+    <td>Ok Button</td>
+    <td>default</td>
+    <td>default</td>
+    <td>primary</td>
+    <td><li>請將確認按鈕置於v-card-actions的最右側</li><li>與相鄰的「取消」按鈕距離8px</li></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>Confirmation Dialog</h4>
+    <ul>
+    <li>使用者須在Dialog中進行「除確認訊息外的」其他動作時使用</li>
+    </ul>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/comfirmation_dialog.png" alt="confirmation_dialog"> <img src="./img/portfolio/syncobox-design-guideline/img/confirmation_dialog_description.png" alt="confirmation_dialog_description">|</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Part</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Card</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td>寬度依內容而定</td>
+    </tr>
+    <tr>
+    <td>Card Title</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>v-divider</td>
+    <td>.ma-0</td>
+    <td>default</td>
+    <td>default</td>
+    <td>使用Confirmation Dialog，請在Card Title下方，Card Body上方之間加入 divider</td>
+    </tr>
+    <tr>
+    <td>Card Body</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card Action</td>
+    <td>default</td>
+    <td>default</td>
+    <td>default</td>
+    <td>不應包含超過兩個以上的動作，若有必要的第三個動作，請以不同於「主要動作」的形式，置於其他適合的地方</td>
+    </tr>
+    <tr>
+    <td>Cancel Button</td>
+    <td>text</td>
+    <td>default</td>
+    <td>default</td>
+    <td><li>請將取消按鈕置於v-card-actions的右側</li><li>與相鄰的「確認」按鈕距離8px</li></td>
+    </tr>
+    <tr>
+    <td>Ok Button</td>
+    <td>default</td>
+    <td>default</td>
+    <td>primary</td>
+    <td><li>請將確認按鈕置於v-card-actions的最右側</li><li>與相鄰的「取消」按鈕距離8px</li></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(3)Demo</h4>
+    <p><a href="https://codepen.io/WeBIM_RD/pen/abdmVEM">Dialogs Demo</a></p>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="2-4">2-4 標籤 Chips</h3>
+    <h4>(1) 種類、定義與使用原則</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>項次</th>
+    <th>種類</th>
+    <th>定義/使用</th>
+    <th>範例</th>
+    <th>尺寸建議</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Information Chips</td>
+    <td>顯示資訊用</td>
+    <td>分類標籤(tags)、資料狀態(status)</td>
+    <td>small 以上</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Action Chips</td>
+    <td>動態產生且具有操作或互動功能</td>
+    <td>帶有Avatar的Email收件人資訊</td>
+    <td>default 以上</td>
+    </tr>
+    </tbody>
+    </table>
+    <table>
+    <thead>
+    <tr>
+    <th><span style="color:#4CAF50; font-weight:900; font-family: Roboto;">Do</span></th>
+    <th><span style="color:#FF5252; font-weight:900; font-family: Roboto;">Don't</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/chipsintableright.png" alt="chips"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/chipsintablewrong2.png" alt="Not good chips"></td>
+    </tr>
+    <tr>
+    <td><li>容易區分Chips與相鄰物件的不同</li></td>
+    <td><li>若相鄰或同一容器中有配置重要的按鈕元件，請勿使用Chips中的「label」屬性，<span style="color:#FF5252; font-weight:900;">避免Chips與按鈕呈現相似的外觀，造成使用者在操作上的混淆</span></li></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(2) SPEC</h4>
+    <ul>
+    <li>規格表</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>Container(包裹Chips的父容器)</th>
+    <th>Type</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>表格</td>
+    <td>Information Chips</td>
+    <td>.mr-2</td>
+    <td><ul><li>small</li><li>outlined(optional)</li></ul></td>
+    <td>視資訊優先(重要)層級決定顏色</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>表格</td>
+    <td>Action Chips</td>
+    <td>.mr-2</td>
+    <td><ul><li>small</li><li>加入icon</li></ul></td>
+    <td>primary</td>
+    <td>Action Chips請加入icon於左側</td>
+    </tr>
+    <tr>
+    <td>Card, Combobox或其他</td>
+    <td>Information Chips</td>
+    <td>.mr-2</td>
+    <td>-</td>
+    <td>視資訊優先(重要)層級決定顏色</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card, Combobox或其他</td>
+    <td>Action Chips</td>
+    <td>.mr-2</td>
+    <td><ul><li>加入icon</li></ul></td>
+    <td>primary</td>
+    <td>Action Chips請加入icon於左側</td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>圖示</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>類型</th>
+    <th>圖例</th>
+    <th>說明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Information Chips</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/chipsintablespec.png" alt="chips spec"></td>
+    <td><li>Chips之間保留8px的margin</li></td>
+    </tr>
+    <tr>
+    <td>Action Chips</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/action_chips_spec.png" alt="action_chips spec"></td>
+    <td><li>Chips之間保留8px的margin</li><li>Icon與Chips文字之間保留8px的margin</li><li><span style="color:#FF5252; font-weight:900;">具有small屬性的Action Chips，應避免選用 &quot;-circle&quot; 類型的icon (請參考此元件的 <a href="https://codepen.io/WeBIM_RD/pen/xxZEKBa">Demo連結</a>)</span></li></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(3) 色彩與樣式使用建議</h4>
+    <ul>
+    <li>建議表</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>色彩</th>
+    <th>樣式</th>
+    <th>優先等級</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>default</td>
+    <td>outlined</td>
+    <td>一般</td>
+    </tr>
+    <tr>
+    <td>custom(自訂)</td>
+    <td>outlined</td>
+    <td>一般</td>
+    </tr>
+    <tr>
+    <td>default</td>
+    <td>default</td>
+    <td>次高</td>
+    </tr>
+    <tr>
+    <td>primary</td>
+    <td>default</td>
+    <td>最高</td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>圖示</li>
+    </ul>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/chipsintable.png" alt="色彩使用建議"></p>
+    <h4>(4)Demo</h4>
+    <p><a href="https://codepen.io/WeBIM_RD/pen/xxZEKBa">Chips Demo</a></p>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="2-5">2-5 載入進度條 Loader</h3>
+    <h4>(1) 種類與使用原則</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>項次</th>
+    <th>種類</th>
+    <th>優先等級</th>
+    <th>使用時機</th>
+    <th>使用原則</th>
+    <th>圖示</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Skeleton loaders</td>
+    <td>優先</td>
+    <td><li>全頁載入</li><li>區塊內容載入</li></td>
+    <td>若能符合載入前與載入後的頁面布局(layout)一致性，應優先使用Skeleton loaders</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/skeleton.png" alt="skeleton"></td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Progress Circular</td>
+    <td>一般</td>
+    <td><li>全頁載入</li><li>區塊內容載入</li></td>
+    <td>若因layout考量而無法使用Skeleton，則使用Progress Circular</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/circulator.png" alt="circulator"></td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Progress Linear</td>
+    <td>輔助</td>
+    <td><li>表格資料載入</li></td>
+    <td>搭配Progress Circular一起使用</td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/linear.png" alt="linear"></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(2) 使用建議</h4>
+    <ul>
+    <li>色彩建議</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>種類</th>
+    <th>色彩</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Skeleton loaders</td>
+    <td>default</td>
+    </tr>
+    <tr>
+    <td>Progress Circular</td>
+    <td>primary</td>
+    </tr>
+    <tr>
+    <td>Progress Linear</td>
+    <td>primary</td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>表格loader使用</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th><span style="color:#4CAF50; font-weight:900; font-family: Roboto;">Do</span></th>
+    <th><span style="color:#FF5252; font-weight:900; font-family: Roboto;">Don't</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/table_loader_right.png" alt="table_loader_right"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/table_loader_wrong.png" alt="table_loader_wrong"></td>
+    </tr>
+    <tr>
+    <td><li>table body區塊加入Progress Circular，避免正在載入的區域的視覺空白</li></td>
+    <td><li>沒有加入loader動畫的地方，容易讓使用者誤以為「該區塊沒有需要載入的資訊」</li></td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>(3) 目標</h4>
+    <p>應使Progress loader符合以下目標：<br/></p>
+    <ul>
+    <li>在載入進行時，讓使用者能夠預期即將載入的內容，而不造成太強烈的驚喜感<br/></li>
+    <li>應讓使用者掌握載入的狀態，包含「已載入」與「未載入」的進度百分比或時間顯示<br/></li>
+    <li>有趣而不無聊的loader動畫</li>
+    </ul>
+    <h4>(4)Demo</h4>
+    <p><a href="https://codepen.io/WeBIM_RD/pen/yLeaKJP">Loaders Demo</a></p>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="2-6">2-6 菜單 Menus</h3>
+    <h4>(1) 使用時機</h4>
+    <ul>
+    <li>菜單在使用者操作具有互動與控制性質的元件時，以非常駐的方式，顯示選單或其他操作控件。</li>
+    </ul>
+    <h4>(2) 使用原則</h4>
+    <ul>
+    <li>以offset動態顯示菜單，避免菜單顯示後覆蓋呼叫菜單的元件資訊</li>
+    <li>菜單的顯示範圍，盡可能避免覆蓋執行動作本身，以及其相關的重要資訊</li>
+    <li>若菜單的內容包含操作功能，應為簡單且直覺的操作方式。若為複雜的操作(如：設定多種參數)，請改以其他容器包裹之。</li>
+    </ul>
+    <h4>(3) 使用建議</h4>
+    <ul>
+    <li>Spec</li>
+    </ul>
+    <p>Default <span style="color:#4caf50; font-weight:900;">(Vuetify Menus已繼承Material Design規範與格式)</span></p>
+    <ul>
+    <li>注意事項</li>
+    </ul>
+    <p>(a) 自動判斷顯示位置 <a href="https://codepen.io/WeBIM_RD/pen/RwrVKgB">Demo</a></p>
+    <table>
+    <thead>
+    <tr>
+    <th>初始化顯示</th>
+    <th><span style="color:#4CAF50; font-weight:900; font-family: Roboto;">Do</span></th>
+    <th><span style="color:#FF5252; font-weight:900; font-family: Roboto;">Don't</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_wrong_before.png" alt="menu_sample"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_right_after.png" alt="menu_right_position"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_wrong_after.png" alt="menu_wrong_position"></td>
+    </tr>
+    </tbody>
+    </table>
+    <p>(b) 適當的menu內容 <a href="https://codepen.io/WeBIM_RD/pen/RwrVKgB">Demo</a></p>
+    <table>
+    <thead>
+    <tr>
+    <th><span style="color:#4CAF50; font-weight:900; font-family: Roboto;">Do</span></th>
+    <th><span style="color:#FF5252; font-weight:900; font-family: Roboto;">Don't</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_wrong_before.png" alt="menu_sample"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/menu_wrong_2.png" alt="menu_wrong_content_type"></td>
+    </tr>
+    <tr>
+    <td><li>Menu之所以稱為Menu，就是因為他是讓使用者進行「選擇」</li><li>放入簡單、直覺且適當的操作內容</li></td>
+    <td><li>一個以上的操作項目，不適合放在Menu的內容中</li></td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h2 id="3">3. 頁面設計</h2>
+    <p>本章「頁面設計」主要針對特定頁面的layout與元件使用進行個別規範。</p>
+    <h3 id="3-1">3-1 App頁面設定</h3>
+    <h4>(1) 概觀</h4>
+    <table>
+    <thead>
+    <tr>
+    <th>預覽狀態</th>
+    <th>編輯狀態</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/appPage_overview11.png" alt="appPage_overview"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/appPage_editor3.png" alt="appPage_editor2"></td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>Spec</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>Part</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Card</td>
+    <td>.pa-5</td>
+    <td>default</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card Title</td>
+    <td>.py-0</td>
+    <td>default</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Card Text</td>
+    <td>default</td>
+    <td>default</td>
+    <td></td>
+    <td></td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>圖示
+    <img src="./img/portfolio/syncobox-design-guideline/img/appPage_overview_design1.png" alt="appPage_overview_spec"></li>
+    </ul>
+    <h4>(2) 預覽狀態</h4>
+    <ul>
+    <li>Spec</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Title Text</td>
+    <td>.display-1</td>
+    <td>default</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Icon Button(編輯)</td>
+    <td></td>
+    <td><ul><li>fab</li><li>small</li></td>
+    <td>primary</td>
+    <td><ul><li>icon: mdi-pencil</li><li>須提供tooltip，顯示動作名稱</li></ul></td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>圖示
+    <img src="./img/portfolio/syncobox-design-guideline/img/appPage_card_title_design2.png" alt="appPage_card_title_design"></li>
+    </ul>
+    <h4>(3) 編輯狀態</h4>
+    <ul>
+    <li>Spec</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>Item</th>
+    <th>Class</th>
+    <th>Props</th>
+    <th>Color</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Title textfield</td>
+    <td>.display-1</td>
+    <td>full-width</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Title Text Button(取消)</td>
+    <td>.ma-2</td>
+    <td><ul><li>text</li><li>outlined</li></td>
+    <td>default</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Title Button(儲存)</td>
+    <td>.ma-2</td>
+    <td>default</td>
+    <td>primary</td>
+    <td><ul><li>icon: mdi-content-save</li></ul></td>
+    </tr>
+    <tr>
+    <td>Components Icon Button(編輯)</td>
+    <td><ul><li>.mt-3</li><li>.mr-3</li></ul></td>
+    <td><ul><li>fab</li><li>x-small</li></ul></td>
+    <td>primary</td>
+    <td><ul><li>icon: mdi-pencil</li><li>須提供tooltip，顯示動作名稱</li><li><img src="./img/portfolio/syncobox-design-guideline/img/appPage_editor_component_tooltip_edit.png" alt="appPage_editor_component_tooltip_edit"></li></td>
+    </tr>
+    <tr>
+    <td>Components Icon Button(刪除)</td>
+    <td><ul><li>.mt-3</li><li>.mr-3</li></ul></td>
+    <td><ul><li>fab</li><li>x-small</li></ul></td>
+    <td>error</td>
+    <td><ul><li>icon: mdi-delete</li><li>須提供tooltip，顯示動作名稱</li><li><img src="./img/portfolio/syncobox-design-guideline/img/appPage_editor_component_tooltip_delete.png" alt="appPage_editor_component_tooltip_delete"></li></td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>圖示
+    <img src="./img/portfolio/syncobox-design-guideline/img/appPage_editor2_design.png" alt="appPage_editor2_spec"></li>
+    </ul>
+    <h4>(4)Demo</h4>
+    <p><a href="https://codepen.io/WeBIM_RD/pen/yLOjLoq">App頁面設定 Demo</a></p>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <h3 id="3-2">3-2 資產管理頁面</h3>
+    <h4>(1) Single Component App Page</h4>
+    <ul>
+    <li>概觀</li>
+    </ul>
+    <table>
+    <thead>
+    <tr>
+    <th>資產管理頁面</th>
+    <th>資產管理頁面SPEC</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/app_asset_page_design.png" alt="app資產管理"></td>
+    <td><img src="./img/portfolio/syncobox-design-guideline/img/app_asset_page.png" alt="app資產管理設計"></td>
+    </tr>
+    </tbody>
+    </table>
+    <ul>
+    <li>詳細規格</li>
+    </ul>
+    <p><img src="./img/portfolio/syncobox-design-guideline/img/app_asset_page.png" alt="app資產管理設計"></p>
+    <p><strong><a href="#syncobox">⬆ back to top</a></strong></p>
+    <hr>
+    <p><strong>其他資源:</strong></p>
+    <ul>
+    <li>📖 <a href="https://material.io/components">Google Material Design Components</a></li>
+    <li>📖 <a href="https://material.io/components">Google Material Design Typography</a></li>
+    <li>📖 <a href="https://material.io/components">Vuetify Typography</a></li>
+    <li>📖 <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen Norman Group-10 Usability Heuristics for User Interface Design</a></li>
+    </ul>
+    
+</body>
+<style>
+body{
+  padding: 50px;
+}
+table{
+  border: 1px solid #eaeaea;
+  border-collapse: collapse;
+  max-width: 100%;
+  margin: 15px;
+}
+tr, td {
+    border: 1px solid #eaeaea;
+    padding: 15px;
+}
+img{
+  max-width: 100%;
+}
+</style>
